@@ -1,0 +1,22 @@
+### TEST GET /
+
+GET http://localhost:8383/
+
+### TEST GET /dashboard
+GET http://localhost:8383/dashboard
+
+### TEST GET /api/data
+GET http://localhost:8383/api/data
+
+### TEST POST /api/data
+POST http://localhost:8383/api/data
+Content-Type: application/json
+
+{
+  "name": "Jane",
+  "age": 25,
+  "occupation": "Designer"
+}
+
+### TEST DELETE /api/data
+DELETE http://localhost:8383/api/data/1
