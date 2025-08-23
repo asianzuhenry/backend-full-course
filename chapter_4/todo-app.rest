@@ -1,0 +1,47 @@
+### GET /
+GET http://localhost:5003
+
+### auth/register
+POST http://localhost:5003/auth/register
+Content-Type: application/json
+
+{
+    "username": "henry@example.com",
+    "password": "123456789"
+}
+
+### auth/login
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+    "username": "henry@example.com",
+    "password": "123456789"
+}
+
+### /todos [protected]
+GET http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU1ODU3MjU4LCJleHAiOjE3NTU5NDM2NTh9.TApZmx5tMfIyJIhh4FZHv74bAWz4VK3NGlX4CuHY6So
+
+### /todos [protected]
+POST http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU1ODU3MjU4LCJleHAiOjE3NTU5NDM2NTh9.TApZmx5tMfIyJIhh4FZHv74bAWz4VK3NGlX4CuHY6So
+Content-Type: application/json
+
+{
+    "task": "Finish coding the project"
+}
+
+### /todos/:ID [protected]
+PUT http://localhost:5003/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU1ODU3MjU4LCJleHAiOjE3NTU5NDM2NTh9.TApZmx5tMfIyJIhh4FZHv74bAWz4VK3NGlX4CuHY6So
+Content-Type: application/json
+
+{
+    "completed": 0
+}
+
+### /todos/:ID [protected]
+DELETE  http://localhost:5003/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU1ODU3MjU4LCJleHAiOjE3NTU5NDM2NTh9.TApZmx5tMfIyJIhh4FZHv74bAWz4VK3NGlX4CuHY6So
+# Content-Type: application/json
